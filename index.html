@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>여행챙김이 · 도시별 여행 준비</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main>
+    <header>
+      <span class="badge">가볍게 준비하는 여행</span>
+      <h1>여행챙김이<span aria-hidden="true"> ✈</span></h1>
+      <p>어디로 떠나세요? 도시를 고르면 여행 준비가 한눈에 보여요.</p>
+    </header>
+
+    <section class="picker" aria-label="여행 도시 선택">
+      <label for="city">여행 도시</label>
+      <div class="select-wrap">
+        <select id="city" aria-controls="summary">
+          <option value="">도시를 선택하세요</option>
+          <option value="tokyo">도쿄 · 일본</option>
+          <option value="bangkok">방콕 · 태국</option>
+          <option value="paris">파리 · 프랑스</option>
+        </select>
+      </div>
+    </section>
+
+    <div id="summary">
+      <div id="empty" class="empty">
+        <span aria-hidden="true">🧳</span>
+        <h2>여행 준비, 도시 선택부터</h2>
+        <p>현지 시각과 옷차림, 챙길 물건을 함께 확인하세요.</p>
+      </div>
+      <section id="result" hidden aria-labelledby="city-name">
+        <div class="result-heading">
+          <div><p id="country" class="eyebrow"></p><h2 id="city-name" aria-live="polite"></h2></div>
+          <span class="sample-tag">예시 요약</span>
+        </div>
+        <div class="cards">
+          <article class="card weather">
+            <h3>날씨와 기온</h3>
+            <p class="temperature"><span id="weather-icon" aria-hidden="true"></span> <span id="temperature"></span></p>
+            <p id="weather"></p>
+          </article>
+          <article class="card">
+            <h3>현지 시각 <span class="muted">· 현재</span></h3>
+            <p id="local-date" class="reference"></p>
+            <p id="local-time" class="time"></p>
+            <p id="difference"></p>
+            <p class="reference">기기 시계 기준 · 자동 갱신</p>
+          </article>
+          <article class="card">
+            <h3>이렇게 입으세요</h3>
+            <p id="outfit" class="recommendation"></p>
+          </article>
+          <article class="card packing">
+            <h3>꼭 챙기세요!</h3>
+            <ul id="items"></ul>
+          </article>
+        </div>
+      </section>
+    </div>
+    <footer>시각과 시차는 현재 기준이며, 날씨·옷차림·준비물은 학습용 가상 데이터입니다.<br>도시 선택은 저장되지 않으며 새로고침하면 초기화됩니다.</footer>
+    <noscript>도시별 요약을 보려면 브라우저에서 JavaScript를 허용해주세요.</noscript>
+  </main>
+</body>
+</html>
